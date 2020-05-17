@@ -6,12 +6,13 @@ using std::cout;
 
 const int MIN_INT = 0x80000000;
 const int MAX_INT = 0x7fffffff;
+const int OVER_FLOW = MAX_INT;
 
 class Solution {
 public:
     int divide(int dividend, int divisor) {
         if (MIN_INT==dividend && -1==divisor) {
-            return MAX_INT;
+            return OVER_FLOW;
         }
         if (MIN_INT==divisor) {
             if (MIN_INT==dividend) {
