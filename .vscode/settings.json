@@ -17,6 +17,13 @@
         "unordered_set": "cpp",
         "vector": "cpp",
         "*.tcc": "cpp",
-        "any": "cpp"
-    }
+        "any": "cpp",
+        "iosfwd": "cpp",
+        "limits": "cpp"
+    },
+    "files.exclude": {
+        "**/*.out": true,
+        "**/*.out.dSYM": true
+    },
+    "git.ignoreLimitWarning": true
 }

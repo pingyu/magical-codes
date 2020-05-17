@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/word-break/
+// https://leetcode.com/problems/word-break-ii/
 
 // #include <bits/stdc++.h>
 #include <iostream>
@@ -104,31 +104,31 @@ struct Case {
 };
 int main() {
     Case cases[] {
-        {
-            "leetcode",
-            {"leet", "code"},
-            true
-        },
-        {
-            "applepenapple",
-            {"apple", "pen"},
-            true
-        },
-        {
-            "catsandog",
-            {"cats", "dog", "sand", "and", "cat"},
-            false
-        },
-        {
-            "n",
-            {"a"},
-            false
-        },
-        {
-            "n",
-            {"n"},
-            true
-        }
+            {
+                    "leetcode",
+                    {"leet", "code"},
+                    true
+            },
+            {
+                    "applepenapple",
+                    {"apple", "pen"},
+                    true
+            },
+            {
+                    "catsandog",
+                    {"cats", "dog", "sand", "and", "cat"},
+                    false
+            },
+            {
+                    "n",
+                    {"a"},
+                    false
+            },
+            {
+                    "n",
+                    {"n"},
+                    true
+            }
     };
     Solution sln;
     for (auto& c: cases) {
