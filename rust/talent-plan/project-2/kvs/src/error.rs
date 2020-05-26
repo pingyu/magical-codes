@@ -8,7 +8,16 @@ pub enum KvError {
     #[fail(display = "{}", _0)]
     Io(#[cause] io::Error),
     #[fail(display = "{}", _0)]
-    Encode(#[cause] bson::EncoderError),
+    Encode(#[cause] serde_json::Error),
+    #[fail(display = "format error: no start mark, pos: {}", _0)]
+    FormatNoStartMark(u64),
+    #[fail(display = "format error: no end mark, pos: {}", _0)]
+    FormatNoEndMark(u64),
+    #[fail(
+        display = "format error: not set command in map, key:{}, pos:{}",
+        _0, _1
+    )]
+    FormatNotSetCommandInMap(String, u64),
 }
 
 impl From<io::Error> for KvError {
@@ -17,8 +26,8 @@ impl From<io::Error> for KvError {
     }
 }
 
-impl From<bson::EncoderError> for KvError {
-    fn from(err: bson::EncoderError) -> KvError {
+impl From<serde_json::Error> for KvError {
+    fn from(err: serde_json::Error) -> KvError {
         KvError::Encode(err)
     }
 }
