@@ -1,0 +1,25 @@
+name: kvs
+author: pingyu <shui.yu@126.com>
+about: A key-value store
+subcommands:
+    - get:
+        about: get value of key
+        args:
+            - KEY:
+                index: 1
+                required: true
+    - set:
+        about: set value of key
+        args:
+            - KEY:
+                index: 1
+                required: true
+            - VALUE:
+                index: 2
+                required: true
+    - rm:
+        about: remove key
+        args:
+            - KEY:
+                index: 1
+                required: true
